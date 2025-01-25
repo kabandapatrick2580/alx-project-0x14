@@ -1,12 +1,19 @@
-const movieCard: React.FC = () => {
-    return (
-        <div className="movie-card">
-            <div className="movie-card__image"></div>
-            <div className="movie-card__info">
-                <h2 className="movie-card__title">Movie Title</h2>
-                <p className="movie-card__description">Movie Description</p>
-            </div>
-        </div>
-    );
+import { MoviesProps } from "@/interfaces"
+import Image from "next/image"
+
+const MovieCard: React.FC<MoviesProps> = ({ title, posterImage, releaseYear }) => {
+  return (
+    <div className="h-[563px]">
+      <div>
+        <Image className="h-[430px] w-full rounded-md hover:cursor-pointer" src={posterImage} width={100} height={100} alt={title} />
+
+      </div>
+      <div className="flex justify-between py-4">
+        <p className="text-xl font-bold">{title}</p>
+        <p className="text-xl text-[#E2D609]">{releaseYear.year}</p>
+      </div>
+    </div>
+  )
 }
-export default movieCard;
+
+export default MovieCard
