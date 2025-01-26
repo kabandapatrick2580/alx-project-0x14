@@ -22,7 +22,6 @@ export default async function handler(request: NextApiRequest, response: NextApi
           headers: {
             "x-rapidapi-host": "moviesdatabase.p.rapidapi.com",
             "x-rapidapi-key": `${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`,
-            console: console.log(process.env.NEXT_PUBLIC_MOVIE_API_KEY),
           },
         }
       );
